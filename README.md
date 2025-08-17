@@ -8,15 +8,15 @@ Support for macOS Sequoia (15). If you are looking for Sonoma (14) support, swti
 
 ## Hardware
 
-| **Component**        | **Model**                                                                              |
-| -------------------- | -------------------------------------------------------------------------------------- |
-| CPU                  | Intel Core i5 12400F                                                                   |
-| Motherboard          | [Asrock B660M-ITX/ac](https://www.asrock.com/mb/Intel/B660M-ITXac/index.asp)           |
-| RAM                  | 16GB (2 x 8GB) G.Skill @ 2666 CL15                                                     |
-| GPU                  | [PowerColor Hellhound RX 6600 - 8GB](https://www.powercolor.com/product?id=1630396326) |
-| OS Disk (Nvme/Sata3) | SK Hynix P31 1TB                                                                       |
-| WiFi / Bluetooth     | Intel Wireless AC 9462 and Bluetooth                                                   |
-| Display              | 2 x 4K (BenQ EW3270U and PD2704U) @ 60Hz on Display Port                               |
+| **Component**        | **Model**                                                                    |
+| -------------------- |------------------------------------------------------------------------------|
+| CPU                  | Intel Core i5 12400                                                          |
+| Motherboard          | [Asrock B660M-ITX/ac](https://www.asrock.com/mb/Intel/B660M-ITXac/index.asp) |
+| RAM                  | 32 GB 2400 MHz DDR4                                                          |
+| GPU                  | AMD Radeon RX 6600 8 GB                                                      |
+| OS Disk (Nvme/Sata3) | WD_BLACK SN770 1TB                                                           |
+| WiFi / Bluetooth     | Intel Wireless AC 9462 and Bluetooth                                         |
+| Display              | Mi Monitor 3440 x 1440（UWQHD - 超宽四倍高清）                                       |
 
 ![Sonoma](./doc/images/sequoia.png)
 
