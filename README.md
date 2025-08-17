@@ -78,9 +78,6 @@
 ## 📦 使用方法
 
 ### 1、克隆或下载本仓库
-```bash
-git clone https://github.com/TalkMu/OpenCore-ASRock-B660m-ITX-AC.git
-```
 
 ### 2、将 **EFI** 文件夹拷贝到启动盘的 **EFI** 分区
 
