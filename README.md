@@ -1,97 +1,91 @@
-# 黑苹果 - Opencore EFI for Asrock B660M-ITX/ac
+# OpenCore EFI for ASRock B660M-ITX/ac + i5-12400 + RX6600
 
-支持 macOS Sequoia 15.6
+本仓库分享适用于 **华擎 ASRock B660M-ITX/ac 主板** 的黑苹果 OpenCore EFI 配置文件，方便拥有相同或相似硬件的小伙伴快速安装 macOS。
 
-## 硬件
+> ⚠️ 本 EFI 仅供学习与研究使用，请勿用于商业用途。使用前请先自行备份原有数据与 EFI。
 
-| **组件**  | **型号**                                                                       |
-|---------|------------------------------------------------------------------------------|
-| CPU     | Intel Core i5 12400                                                          |
-| 主板      | [Asrock B660M-ITX/ac](https://www.asrock.com/mb/Intel/B660M-ITXac/index.asp) |
-| 内存      | 32 GB 2400 MHz DDR4                                                          |
-| 显卡      | AMD Radeon RX 6600 8 GB                                                      |
-| 系统盘     | WD_BLACK SN770 1TB                                                           |
-| WiFi/蓝牙 | Intel Wireless AC 9462 and Bluetooth                                         |
-| 显示器     | Mi Monitor 3440 x 1440（UWQHD - 超宽四倍高清）                                       |
+---
 
-![Sonoma](./doc/images/sequoia.png)
+## 🖥️ 硬件配置
 
-## BIOS 设置
+| 硬件 | 型号 |
+|------|------|
+| 主板 | ASRock B660M-ITX/ac |
+| CPU  | Intel Core i5-12400 (Alder Lake) |
+| 核显 | Intel UHD 730 (已禁用) |
+| 独显 | AMD Radeon RX 6600 (原生支持) |
+| 内存 | DDR4 32GB (2x16GB) |
+| 硬盘 | NVMe SSD（建议 WD SN570 / SN850 / 三星 970/980 系列）|
+| 网卡 | Intel® I219-V (有线) / Intel® 802.11ac + 蓝牙 5.1 (需驱动) |
 
-参考 - [黑苹果华擎 Asrock 主板 BIOS 详细截图设置教程](https://www.bilibili.com/read/cv12293964)
+---
 
-### 先决条件
+## ✨ EFI 特性
 
-在BIOS中, 使用 `F6` 切换到 `Advanced Mode`.
+- 引导器：OpenCore `1.0.5`
+- 支持系统：macOS **Sequoia 15.x**、macOS **Sonoma 14.x**
+- 核显禁用，仅使用 **RX6600** 作为主力显卡
+- 原生支持 **睡眠 / 唤醒 / USB 映射 / 声卡 / 有线网络**
+- 支持 **iServices (iMessage, FaceTime, App Store)**
+- BIOS 设置优化，安装过程稳定
 
-### OC Tweaker
+---
 
-- Intel Turbo Boost Max Technology 3.0: **Enabled**
+## ✅ 已驱动功能
 
-### Advanced - CPU Configuration
+- [x] CPU / 内存 / 睿频正常
+- [x] RX6600 原生免驱，支持 Metal 3
+- [x] 声卡：ALC897 (通过 `alcid=xx` 注入)
+- [x] 有线网卡：Intel I219V 正常
+- [x] USB：定制 USBPorts，Type-A/Type-C 全部可用
+- [x] 睡眠与唤醒：正常
+- [x] NVRAM：持久化正常
 
-- Intel Hyper-Threading Technology: **Enabled**
-- **CFG Lock**: **Disabled**
-- Intel Virtualization Technology: **Enabled**
-- **Software Guard Extensions (SGX)**: **Disabled**
+---
 
-### Advanced - Chipset Configuration
+## ⚠️ 暂未解决 / 需注意
+- [ ] 目前的WIFI方案使用 `itlwm` + `HeliPort`
 
-- Primary Graphics Adapter: **PCIe**
-- Above 4G Decoding: **Enabled**
-- **C.A.M (Clever Access Memory)**: **Enabled**
+---
 
-### Advanced - Storage Configuration
+## 🔧 BIOS 设置 (必看)
 
-- SATA Mode Selection: **AHCI**
+进入 BIOS (`F2` 键)，建议加载 **默认设置 (Load UEFI Defaults)** 后，修改以下选项：
 
-### Advanced - USB Configuration
+### Advanced → Chipset Configuration
+- [x] Primary Graphics Adapter → **PCIE1**
+- [x] VT-d → **Disabled** (如需开启需搭配 `DisableIoMapper`)
+- [x] iGPU Multi-Monitor → **Disabled** （禁用核显）
+- [x] Deep Sleep → **Enabled in S4-S5**
 
-- Legacy USB Support: **Enabled**
-- XHCI Hand-off: **Enabled**
+### Advanced → ACPI Configuration
+- [x] PCIE Devices Power On → **Enabled**
+- [x] I219 LAN Power On → **Disabled**
 
-### Advanced - ACPI Configuration
-
-- PS/2 Keyboard S4/S5 Wakup Support: **Enabled**
-- USB Keyboard/Remote Power On: **Enabled**
-- USB Mouse Power On: **Enabled**
-
-### Advanced - Trusted Computing
-
-- Security Device Support: **Disabled**
-
-### Advanced - Super IO Configuration
-
-- Serial Port: **Enabled**
+### Advanced → USB Configuration
+- [x] XHCI Hand-off → **Enabled**
 
 ### Security
-
-- **Secure Boot**: **Disabled**
+- [x] Secure Boot → **Disabled**
 
 ### Boot
+- [x] Boot From Onboard LAN → **Enabled**
 
-- Fast Boot: **Disabled**
-- **CSM**: **Disabled**
+---
 
-## Installation
+## 📦 使用方法
 
-See [Installation notes](./doc/INSTALLATION.md).
+### 1、克隆或下载本仓库
+```bash
+git clone https://github.com/TalkMu/OpenCore-ASRock-B660m-ITX-AC.git
+```
 
-## Notes
+### 2、将 **EFI** 文件夹拷贝到启动盘的 **EFI** 分区
 
-- Until now (9/20), we have to use itlwm and HeliPort to use AX201 WiFi.
+### 3、使用 **ProperTree** 或 **OCAuxiliaryTools** 修改以下信息：
+- `PlatformInfo -> Generic` 内的 `SerialNumber`、`MLB`、`SystemUUID`
+- SMBIOS 建议使用 `MacPro7,1`
 
-- To enable OTA update, you have to include [RestrictEvents](https://github.com/acidanthera/RestrictEvents) kext and add boot flag:
+### 4、按照上述 **BIOS 设置** 调整 **BIOS**
 
-  ```text
-  revpatch=auto,sbvmm,asset
-  ```
-
-- There was an issue about OpenCore will repeatly reboot until successfully get into the macOS. Removing `-v` in `boot-args` seems fix the issue.
-
-## Reference
-
-- [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)
-- [OpenCore Alder Lake (12th-Gen Intel) Hackintosh Guidance](https://www.reddit.com/r/hackintosh/comments/sp1zgv/opencore_alder_lake_12thgen_intel_hackintosh/)
-- [Fix shutdown and restart](https://github.com/Koala166/The-TLDR-Guide-of-Fixing-Shutdown-Restart)
-- [OC Sanity Checker](https://sanitychecker.ocutils.me/)
+### 5、引导安装 **macOS**
