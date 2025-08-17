@@ -8,15 +8,15 @@
 
 ## 🖥️ 硬件配置
 
-| 硬件 | 型号 |
-|------|------|
-| 主板 | ASRock B660M-ITX/ac |
-| CPU  | Intel Core i5-12400 (Alder Lake) |
-| 核显 | Intel UHD 730 (已禁用) |
-| 独显 | AMD Radeon RX 6600 (原生支持) |
-| 内存 | DDR4 32GB (2x16GB) |
-| 硬盘 | NVMe SSD（建议 WD SN570 / SN850 / 三星 970/980 系列）|
-| 网卡 | Intel® I219-V (有线) / Intel® 802.11ac + 蓝牙 5.1 (需驱动) |
+| 硬件 | 型号                                   |
+|------|--------------------------------------|
+| 主板 | ASRock B660M-ITX/ac                  |
+| CPU  | Intel Core i5-12400 (Alder Lake)     |
+| 核显 | Intel UHD 730 (已禁用)                  |
+| 独显 | AMD Radeon RX 6600 (原生支持)            |
+| 内存 | 金士顿 DDR4 32GB (2x16GB)               |
+| 硬盘 | 西数黑盘 SN770 1TB                       |
+| 网卡 | Intel Wireless AC 9462 and Bluetooth |
 
 ---
 
@@ -44,7 +44,7 @@
 ---
 
 ## ⚠️ 暂未解决 / 需注意
-- [ ] 目前的WIFI方案使用 `itlwm` + `HeliPort`
+- [ ] 系统内置无线WIFI功能（目前的WIFI方案使用 `itlwm` + `HeliPort`）
 
 ---
 
