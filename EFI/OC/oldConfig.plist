@@ -1221,7 +1221,7 @@
                     <key>bluetoothInternalControllerInfo</key>
                     <data>AAAAAAAAAAAAAAAAAAA=</data>
                     <key>boot-args</key>
-                    <string>agdpmod=pikera -wegnoigpu -mausiwol -amfipassbeta alcid=22 ipc_control_port_options=0 revpatch=auto,sbvmm,asset darkwake=0</string>
+                    <string>agdpmod=pikera -amfipassbeta alcid=22 darkwake=0</string>
                     <key>csr-active-config</key>
                     <data>AwAAAA==</data>
                     <key>prev-lang:kbd</key>

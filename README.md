@@ -1,32 +1,28 @@
-# Hackintosh - Opencore EFI for Asrock B660M-ITX/ac
+# 黑苹果 - Opencore EFI for Asrock B660M-ITX/ac
 
-Support for macOS Sequoia (15). If you are looking for Sonoma (14) support, swtich to [sonoma](https://github.com/likidu/OpenCore-ASRock-B660m-ITX-AC/tree/sonoma) branch.
+支持 macOS Sequoia 15.6
 
-## Changelog
+## 硬件
 
-- **[9/20]**: Updated to OpenCore 1.0.1 and macOS Sequoia 15.0. Multiple kexts and drivers are updated.
-
-## Hardware
-
-| **Component**        | **Model**                                                                    |
-| -------------------- |------------------------------------------------------------------------------|
-| CPU                  | Intel Core i5 12400                                                          |
-| Motherboard          | [Asrock B660M-ITX/ac](https://www.asrock.com/mb/Intel/B660M-ITXac/index.asp) |
-| RAM                  | 32 GB 2400 MHz DDR4                                                          |
-| GPU                  | AMD Radeon RX 6600 8 GB                                                      |
-| OS Disk (Nvme/Sata3) | WD_BLACK SN770 1TB                                                           |
-| WiFi / Bluetooth     | Intel Wireless AC 9462 and Bluetooth                                         |
-| Display              | Mi Monitor 3440 x 1440（UWQHD - 超宽四倍高清）                                       |
+| **组件**  | **型号**                                                                       |
+|---------|------------------------------------------------------------------------------|
+| CPU     | Intel Core i5 12400                                                          |
+| 主板      | [Asrock B660M-ITX/ac](https://www.asrock.com/mb/Intel/B660M-ITXac/index.asp) |
+| 内存      | 32 GB 2400 MHz DDR4                                                          |
+| 显卡      | AMD Radeon RX 6600 8 GB                                                      |
+| 系统盘     | WD_BLACK SN770 1TB                                                           |
+| WiFi/蓝牙 | Intel Wireless AC 9462 and Bluetooth                                         |
+| 显示器     | Mi Monitor 3440 x 1440（UWQHD - 超宽四倍高清）                                       |
 
 ![Sonoma](./doc/images/sequoia.png)
 
-## BIOS Settings
+## BIOS 设置
 
-Reference - [黑苹果华擎 Asrock 主板 BIOS 详细截图设置教程](https://www.bilibili.com/read/cv12293964)
+参考 - [黑苹果华擎 Asrock 主板 BIOS 详细截图设置教程](https://www.bilibili.com/read/cv12293964)
 
-### Prerequisites
+### 先决条件
 
-In BIOS, use `F6` to swtich to `Advanced Mode`.
+在BIOS中, 使用 `F6` 切换到 `Advanced Mode`.
 
 ### OC Tweaker
 
