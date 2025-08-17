@@ -18,6 +18,8 @@
 | 硬盘 | 西数黑盘 SN770 1TB                       |
 | 网卡 | Intel Wireless AC 9462 and Bluetooth |
 
+![Sonoma](./doc/images/sequoia.png)
+
 ---
 
 ## ✨ EFI 特性
